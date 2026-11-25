@@ -20,11 +20,11 @@ AMTPlayer::AMTPlayer()
 	RootComponent = CollisionCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Collision Component"));
 	
 	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Static Mesh"));
-	StaticMesh->SetupAttachment(RootComponent);
+	StaticMesh->SetupAttachment(CollisionCapsule);
 	StaticMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
-	Camera->SetupAttachment(RootComponent);
+	Camera->SetupAttachment(CollisionCapsule);
 }
 
 void AMTPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
